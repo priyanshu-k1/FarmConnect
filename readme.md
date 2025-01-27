@@ -81,16 +81,9 @@ We welcome contributions to the GrowBeyond project! If you'd like to contribute,
 4. Push to the branch (`git push origin feature-name`).
 5. Create a new Pull Request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Thanks to [Bootstrap](https://getbootstrap.com/) for the responsive front-end framework.
-- Thanks to [OpenWeatherMap](https://openweathermap.org/) for their weather API (if applicable).
 - Thanks to all contributors!
 
 ---
-
-Feel free to add/remove sections depending on the progress of your project. The **Installation**, **Usage**, and **Contributing** sections are especially useful for anyone who might want to work on or run your project. Let me know if you'd like any specific sections added!
