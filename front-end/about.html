@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/front-end/assets/vector/icon.ico" type="image/x-icon">
+    <title>GrowBeyond</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-light fixed-top" id="NAVBAR">
+        <div class="container-fluid" id="innerNavBarDiv">
+          <a class="navbar-brand text-white"
+            href="https://priyanshu-k1.github.io/AgriConnect/main.html"
+            target="_blank"
+            style="min-width: 100px"
+  >
+            <div class="rounded-circle">
+              <h3 id="navH3" class="rounded-circle">GB</h3>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a data-lang="nav1" class="nav-link" href="main.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a data-lang="nav2" class="nav-link" href="learning.html">Learning</a>
+              </li>
+              <li class="nav-item">
+                <a data-lang="nav3" class="nav-link" href="shop.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a data-lang="nav4" class="nav-link" href="about.html">about</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-lang="nav5"
+                  id="languageDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Language
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="languageDropdown"
+                >
+                  <li>
+                    <button class="dropdown-item" onclick="selectLanguage('en')">
+                      English
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" onclick="selectLanguage('hi')">
+                      Hindi
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" onclick="selectLanguage('te')">
+                      Telugu
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    
+
+<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
