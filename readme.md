@@ -39,7 +39,7 @@ GrowBeyond is a web platform designed to educate farmers about crops and provide
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/agri-connect.git
+   git clone git@github.com:priyanshu-k1/GrowBeyond.git
    cd agri-connect
    ```
 
@@ -62,7 +62,7 @@ GrowBeyond is a web platform designed to educate farmers about crops and provide
 
 5. Open the website in your browser:
    ```plaintext
-   http://localhost:3000
+   http://localhost:5000
    ```
 
 ## Usage
