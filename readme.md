@@ -40,7 +40,7 @@ GrowBeyond is a web platform designed to educate farmers about crops and provide
 1. Clone the repository:
    ```bash
    git clone git@github.com:priyanshu-k1/GrowBeyond.git
-   cd agri-connect
+   cd GrowBeyond
    ```
 
 2. Install dependencies for the frontend:
