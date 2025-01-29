@@ -1,91 +1,733 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/front-end/assets/vector/icon.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/vector/icon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/styles/main_screen.css" />
+    <link rel="stylesheet" href="./assets/styles/shop.css" />
+    <!-- Single link for Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Shopping cart icon -->
+    <span class="material-symbols-outlined nav-link" id="cart"
+      >shopping_cart</span
+    >
+
+    <!-- Add shopping cart icon -->
+    <span class="material-symbols-outlined">add_shopping_cart</span>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./Scripts/language.js"></script>
     <title>GrowBeyond</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg bg-light fixed-top" id="NAVBAR">
-        <div class="container-fluid" id="innerNavBarDiv">
-          <a class="navbar-brand text-white"
-            href="https://priyanshu-k1.github.io/AgriConnect/main.html"
-            target="_blank"
-            style="min-width: 100px"
-  >
-            <div class="rounded-circle">
-              <h3 id="navH3" class="rounded-circle">GB</h3>
+      <div class="container-fluid" id="innerNavBarDiv">
+        <a
+          class="navbar-brand text-white"
+          href=""
+          target="_blank"
+          style="min-width: 100px"
+        >
+          <div class="rounded-circle">
+            <h3 id="navH3" class="rounded-circle">GB</h3>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a data-lang="nav1" class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a data-lang="nav2" class="nav-link" href="learning.html"
+                >Learning</a
+              >
+            </li>
+            <li class="nav-item">
+              <a data-lang="nav3" class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a data-lang="nav4" class="nav-link" href="about.html">about</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <div class="cart-icon">
+                <span class="material-symbols-outlined nav-link" id="cart">
+                  shopping_cart
+                </span>
+                <span id="cart-count" class="cart-badge">0</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" role="button">Sign in</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-lang="nav5"
+                id="languageDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Language
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="languageDropdown"
+              >
+                <li>
+                  <button class="dropdown-item" onclick="selectLanguage('en')">
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" onclick="selectLanguage('hi')">
+                    Hindi
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" onclick="selectLanguage('te')">
+                    Telugu
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="logoArea">
+      <img src="/assets/products/Marketplace.png" alt="" class="coverImage" />
+      <span class="covercaption">One place for all your needs.</span>
+    </div>
+
+    <div class="mainbody">
+      <!-- Item holder for 1 set of  items -->
+      <div class="itemholder">
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p1.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">ATRAZINE WP</h4>
+            <p class="card-text">
+              Atrazine WP is a selective herbicide used to control a wide range
+              of weeds.
+            </p>
+            <p data-lang="crop1">Best for: corn, sorghum, sugarcane.</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('ATRAZINE WP')">
+                  Buy Now
+                </button>
+              </div>
             </div>
-          </a>
-          <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a data-lang="nav1" class="nav-link" href="main.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a data-lang="nav2" class="nav-link" href="learning.html">Learning</a>
-              </li>
-              <li class="nav-item">
-                <a data-lang="nav3" class="nav-link" href="shop.html">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a data-lang="nav4" class="nav-link" href="about.html">about</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  data-lang="nav5"
-                  id="languageDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Language
-                </a>
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="languageDropdown"
-                >
-                  <li>
-                    <button class="dropdown-item" onclick="selectLanguage('en')">
-                      English
-                    </button>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" onclick="selectLanguage('hi')">
-                      Hindi
-                    </button>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" onclick="selectLanguage('te')">
-                      Telugu
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
           </div>
         </div>
-      </nav>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p2.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Clorex Gold</h4>
+            <p class="card-text">
+              an insecticide containing Chlorpyrifos, an organophosphate
+              insecticide.
+            </p>
+            <p data-lang="crop2">Best for: Cotton, potatoes</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('Clorex Gold')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p3.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Basagran</h4>
+            <p class="card-text">
+              is a selective herbicide used to control a wide range of weeds,
+              primarily broadleaf weeds
+            </p>
+            <p data-lang="crop3">Best for: Rice, Soybeans</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('Basagran')">
+                  Buy Now
+                </button>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p4.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Proflex Super</h4>
+            <p class="card-text">
+              Super is an insecticide used to control a wide range of insect
+              pests in various crops.
+            </p>
+            <p data-lang="crop4">Best for: Cotton, Vegetables</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('Proflex Super')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p5.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Panah Plus</h4>
+            <p class="card-text">
+              an insecticide used to control a wide range of insect pests in
+              various crops.
+            </p>
+            <p data-lang="crop5">Best for: Cotton, Brinjal</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('Panah Plus')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p6.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">NPK 21-0-0</h4>
+            <p class="card-text">
+              is a nitrogen-rich fertilizer. T it contains 21% Nitrogen, 0%
+              Phosphorus, and 0% Potassium.
+            </p>
+            <p data-lang="crop6">Best for: wheat, corn</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('NPK 21-0-0')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p7.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Rogor</h4>
+            <p class="card-text">
+              An organophosphate insecticide .It is containing the active
+              ingredient Dimethoate.
+            </p>
+            <p data-lang="crop7">Best for: cotton, corn</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('Rogor')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p8.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">NPK</h4>
+            <p class="card-text">
+              Nitrogen,Phosphorus and Potassium.Three primary macronutrients
+              good for plant.
+            </p>
+            <p data-lang="crop8">Best for: Tomatoes, berries</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('NPK')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
 
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p9.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">HUMIROOT</h4>
+            <p class="card-text">
+              Humiroot is a product containing Humic Acid derived from the
+              decomposition of organic matter.
+            </p>
+            <p data-lang="crop9">Best for: wheat, corn</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('HUMIROOT')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p10.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">2,4-D MAIN</h4>
+            <p class="card-text">
+              2,4-D is a selective herbicide primarily used to control broadleaf
+              weeds in lawns and turf areas.
+            </p>
+            <p data-lang="crop10">Best for: Soybeans, Pastures</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('2,4-D MAIN')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p11.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">SUPER PHOSPHATE</h4>
+            <p class="card-text">
+              Essential for root development, flower and fruit production, and
+              overall plant health.
+            </p>
+            <p data-lang="crop11">Best for: Apples, corn</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('SUPER PHOSPHATE')">
+                  Buy Now
+                </button>
+              </div>
+  
+            </div>
+          
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p12.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">BIO POTASH</h4>
+            <p class="card-text">
+              Potassium fertilizer derived from natural sources like seaweed,
+              rock dust, or plant extracts.
+            </p>
+            <p data-lang="crop12">Best for: grapes, berries</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('BIO POTASH')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
 
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p13.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">MAX STRENGTH</h4>
+            <p class="card-text">
+              Adequate nitrogen leads to lush green foliage and robust plant
+              development.
+            </p>
+            <p data-lang="crop13">Best for: barley, rice</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick="onPressedBuyNow('MAX STRENGTH')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p14.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">ParaGold</h4>
+            <p class="card-text">
+              Kills weed by contact, meaning it must directly touch the weed's
+              foliage to be effective.
+            </p>
+            <p data-lang="crop14">Best for: potatoes, soybeans</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick="onPressedBuyNow('ParaGold')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p15.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Imida</h4>
+            <p class="card-text">
+              Imidacloprid is absorbed by the plant and translocated throughout
+              its tissues.Effective against sucking.
+            </p>
+            <p data-lang="crop15">Best for: Cotton, corn</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('Imida')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p16.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">MALATHION</h4>
+            <p class="card-text">
+              Effective against a wide range of insects, including mosquitoes,
+              flies, aphids, mites, and some caterpillars.
+            </p>
+            <p data-lang="crop16">Best for: pears, cabbage</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('MALATHION')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p17.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">N-S-K-E</h4>
+            <p class="card-text">
+              t is a natural pesticide extracted from the seeds of the neem tree
+              (Azadirachta indica).
+            </p>
+            <p data-lang="crop17">Best for: Apples, mangoes</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('N-S-K-E')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="cardImgHolder">
+            <img
+              class="card-img-top cardImg"
+              src="/assets/products/p18.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">METASYSTOX</h4>
+            <p class="card-text">
+              Metasystox is an insecticide containing the active ingredient
+              oxydemeton-methyl.
+            </p>
+            <p data-lang="crop18">Best for: potatoes, cauliflower</p>
+            <div class="finalinfo">
+              <p id="priceP">210₹</p>
+              <div class="innerfinalinfo">
+                <span class="material-symbols-outlined cartspan">
+                  add_shopping_cart
+                </span>
+                <button
+                  class="btn btn-primary cartbutton"
+                  data-lang="buyb"
+                  onclick=" onPressedBuyNow('METASYSTOX')">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">Priyanshu Kumar</span>
+        </div>
     
-
-<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <div class="socialhadle">
+          <a href="https://github.com/priyanshu-k1"  target="_blank"><i class="fa fa-github  fa-2x" aria-hidden="true" ></i></a>
+          <a href="https://www.instagram.com/why.not.priyanshuuuu/?hl=en"  target="_blank"><i class="fa fa-instagram  fa-2x" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/priyanshu-kumar-97898424a/"  target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+          <a href="https://leetcode.com/u/priyanshu-k1/"  target="_blank"><i class="fa fa-code fa-2x" aria-hidden="true"></i></a>
+        </div>
+      </footer>
+    </div>
+  
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

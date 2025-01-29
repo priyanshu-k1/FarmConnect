@@ -76,6 +76,20 @@ body {
   .profilePicture{
    border-radius: 9px;
   }
+  .socialhadle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height:30%;
+}
+.fa{
+    color: #0d0f12;
+    transition: transform 0.6s ease-in-out;
+}
+.fa:hover{
+    transform: scale(1.1);
+}
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;

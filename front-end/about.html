@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/front-end/assets/vector/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/vector/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/main_screen.css">
+    <link rel="stylesheet" href="./assets/styles/about.css">
+    <script src="./Scripts/language.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>GrowBeyond</title>
 </head>
 <body>
@@ -12,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-light fixed-top" id="NAVBAR">
         <div class="container-fluid" id="innerNavBarDiv">
           <a class="navbar-brand text-white"
-            href="https://priyanshu-k1.github.io/AgriConnect/main.html"
+            href=""
             target="_blank"
             style="min-width: 100px"
   >
@@ -33,7 +37,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a data-lang="nav1" class="nav-link" href="main.html">Home</a>
+                <a data-lang="nav1" class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a data-lang="nav2" class="nav-link" href="learning.html">Learning</a>
@@ -46,6 +50,9 @@
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link"  role="button">Sign in</a>
+              </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -84,8 +91,84 @@
       </nav>
 
 
-    
 
+      <div class="about-section">
+        <h1 data-lang="aboutheading">About Us</h1>
+        <p data-lang="aboutText1">
+          Welcome to <b>GrowBeyond</b>, your trusted partner in farming and
+          agriculture!
+        </p>
+        <p data-lang="aboutText2">
+          At GrowBeyond, we are committed to empowering farmers with knowledge
+          and resources to grow a better tomorrow. Our goal is to support you in
+          making informed decisions about crops, their requirements, and effective
+          agricultural practices—all in the language you are most comfortable
+          with: English, Hindi, and Telugu.
+        </p>
+        <p data-lang="aboutText3">
+          What We Offer Crop Education We provide detailed information about
+          various crops, including their water needs, soil type, temperature
+          preferences, and more. Learn about pest management, fertilizers, and
+          seasonal insights tailored to your region. Farming Resources Whether you
+          need pesticides, fertilizers, or high-quality seeds, we've got you
+          covered. We ensure timely delivery of all essential agricultural
+          products right to your doorstep, saving you time and effort. Language
+          Support We believe that knowledge is best understood in a language you
+          are comfortable with. Our platform supports English, Hindi, and Telugu,
+          making it accessible to farmers across India. Sustainable Solutions From
+          organic farming tips to advanced sustainable practices, we guide you 
+          toward eco-friendly methods that benefit both your crops and the
+          environment.
+        </p>
+  
+        <p data-lang="aboutText4">
+          Why Choose Us? Farmer-Centric Approach: We prioritize your needs and
+          challenges. Accessible Information: Our multilingual platform ensures
+          that every farmer can access the guidance they need. Quality Assurance:
+          All products delivered through us are tested and trusted for the best
+          results. Affordable Solutions: We aim to make modern farming techniques
+          and products accessible to all. Join us in cultivating a brighter
+          future. Let's grow together with GrowBeyond—because your success is our
+          mission. Contact us today to learn more and explore the resources
+          waiting for you!
+        </p>
+      </div>
+  
+      <h2 style="text-align: center" data-lang="aboutheading2">Our Team</h2>
+      <div class="row d-flex flex-wrap flex-md-row flex-column justify-content-center" style="gap: 20px; margin: 20px 0;">
+        <!-- Card 1 -->
+        <div class="card" style="width: 18rem; border: 1px solid #08A346; border-radius: 10px; overflow: hidden;">
+          <img class="card-img-top profilePicture" src="Resources/lady-farmer.jpg" alt="Person One Card" style="margin-top: 10px;" >
+          <div class="card-body">
+            <h2 class="card-title text-center rounded" style="color: #08A346;">Priyanshu kumar</h2>
+            <p class="card-text" data-lang="quote1">
+              Farming is our heritage, innovation is our promise. Let's nurture success, together.
+            </p>
+            <p class="card-text text-success">
+              kpriyanshupdc@gmail.com
+            </p>
+            <p></p>
+            <a class="btn btn-success w-100" style="background-color: #08A346;" onclick="redirectToMail('srimylaboina17@gmail.com')" data-lang="contactB">Contact</a>
+          </div>
+        </div>
+        <div class="container">
+          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+              <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <span class="mb-3 mb-md-0 text-muted">Priyanshu Kumar</span>
+            </div>
+        
+            <div class="socialhadle">
+              <a href="https://github.com/priyanshu-k1"  target="_blank"><i class="fa fa-github  fa-2x" aria-hidden="true" ></i></a>
+              <a href="https://www.instagram.com/why.not.priyanshuuuu/?hl=en"  target="_blank"><i class="fa fa-instagram  fa-2x" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/in/priyanshu-kumar-97898424a/"  target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+              <a href="https://leetcode.com/u/priyanshu-k1/"  target="_blank"><i class="fa fa-code fa-2x" aria-hidden="true"></i></a>
+            </div>
+          </footer>
+        </div>
+      
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

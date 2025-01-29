@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/front-end/assets/vector/icon.ico" type="image/x-icon">
-    <title>GrowBeyond</title>
+   <!-- Bootstrap CSS from node_modules -->
+   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+<!-- ./node_modules/bootstrap/dist/css/bootstrap.min.css -->
+<!-- Favicon -->
+<link rel="shortcut icon" href="./assets/vector/icon.ico" type="image/x-icon">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="./assets/styles/main_screen.css">
+<link rel="stylesheet" href="./assets/styles/style.css">
+
+<title>GrowBeyond</title>
+
+<!-- Scripts -->
+<script src="./Scripts/language.js"></script>
+<script src="./Scripts/app.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
     <nav class="navbar navbar-expand-lg bg-light fixed-top" id="NAVBAR">
         <div class="container-fluid" id="innerNavBarDiv">
           <a class="navbar-brand text-white"
-            href="https://priyanshu-k1.github.io/AgriConnect/main.html"
+            href=""
             target="_blank"
-            style="min-width: 100px"
-  >
+            style="min-width: 100px">
             <div class="rounded-circle">
               <h3 id="navH3" class="rounded-circle">GB</h3>
             </div>
@@ -33,19 +44,24 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a data-lang="nav1" class="nav-link" href="main.html">Home</a>
+                <a data-lang="nav1" class="nav-link" href="./index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a data-lang="nav2" class="nav-link" href="learning.html">Learning</a>
+                <a data-lang="nav2" class="nav-link" href="./learning.html">Learning</a>
               </li>
               <li class="nav-item">
-                <a data-lang="nav3" class="nav-link" href="shop.html">Shop</a>
+                <a data-lang="nav3" class="nav-link" href="./shop.html">Shop</a>
               </li>
               <li class="nav-item">
-                <a data-lang="nav4" class="nav-link" href="about.html">about</a>
+                <a data-lang="nav4" class="nav-link" href="./about.html">About</a>
               </li>
+             
             </ul>
+
             <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link"  role="button" onclick="onSignInClick()">Sign in</a>
+              </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -82,6 +98,192 @@
           </div>
         </div>
       </nav>
+
+      <div class="parentCoverPic">
+        <div class="coverImage slider_container">
+          <div class="slider">
+            <div class="slide one">
+              <img src="assets/vector/welcome.png" alt="people welcoming" />
+            </div>
+            <div class="slide one">
+              <img src="assets/vector/slide-1.png" alt="" />
+              <span class="caption">The Earth Provides, We Cultivate.</span>
+            </div>
+            <div class="slide tw0">
+              <img src="assets/vector/slide-2.png" alt="" />
+              <span class="caption"> Cultivating a Better Future. </span>
+            </div>
+            <div class="slide three">
+              <img src="assets/vector/slide-3.png" alt="" />
+              <span class="caption"> Grow with Nature. </span>
+            </div>
+            <div class="slide four">
+              <img src="assets/vector/slide-4.png" alt="" />
+              <span class="caption">
+                Hands in the soil, heart in the harvest.</span
+              >
+            </div>
+            <div class="slide five">
+              <img src="/front-end/assets/vector/slide-5.jpg" alt="" />
+              <span class="caption">Sustainable Harvest. </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="testimonial">
+        <h2 align="center" style="background-color: #e8f5e9; color: #115a2e">
+          Testimonials
+        </h2>
+        <div class="outerdiv">
+          <div class="innerdiv">
+            <!-- div1 -->
+            <div class="div1 eachdiv">
+              <div class="userdetails">
+                <div class="imgbox">
+                  <img
+                    src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
+                    alt="Person 1 picture"
+                  />
+                </div>
+                <div class="detbox">
+                  <p class="name">Rajesh Kumar, Farmer, Uttar Pradesh</p>
+                  <p class="designation">Verified User</p>
+                </div>
+              </div>
+              <div class="review">
+                <h4>
+                  GrowBeyond has completely transformed my farming practices.
+                  Their crop education resources helped me choose the right crops
+                  for my soil and climate. Plus, the fertilizers I ordered arrived
+                  on time and worked wonders. Highly recommend!
+                </h4>
+              </div>
+            </div>
+            <!-- div2 -->
+            <div class="div2 eachdiv">
+              <div class="userdetails">
+                <div class="imgbox">
+                  <img
+                    src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg"
+                    alt="Person 2 picture"
+                  />
+                </div>
+                <div class="detbox">
+                  <p class="name">Amit Sharma, Organic Farmer, Rajasthan</p>
+                  <p class="designation">Verified User</p>
+                </div>
+              </div>
+              <div class="review">
+                <h4>The team was very supportive</h4>
+                <p>
+                  “"I was skeptical at first, but GrowBeyond proved to be a
+                  lifesaver. Their sustainable farming tips not only improved my
+                  crop yield but also reduced my costs. The quality of their seeds
+                  is exceptional!"”
+                </p>
+              </div>
+            </div>
+            <!-- div3 -->
+            <div class="div3 eachdiv">
+              <div class="userdetails">
+                <div class="imgbox">
+                  <img
+                    src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="detbox">
+                  <p class="name dark">Karthika Naidu, Farmer, Telangana</p>
+                  <p class="designation dark">Verified User</p>
+                </div>
+              </div>
+              <div class="review dark">
+                <h4>Such a life-changing experience. Highly recommended!</h4>
+                <p>
+                  “ The best part about GrowBeyond is the customer support. They
+                  patiently explained everything about seasonal crops in Hindi. It
+                  feels like they genuinely care about the farmers' success. Truly
+                  a trusted partner!.GrowBeyond's home delivery of farming
+                  supplies has saved me so much time and effort. The pesticides
+                  and fertilizers they deliver are of top-notch quality. I can't
+                  thank them enough for their reliable service”
+                </p>
+              </div>
+            </div>
+            <!-- div4 -->
+            <div class="div4 eachdiv">
+              <div class="userdetails">
+                <div class="imgbox">
+                  <img
+                    src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="detbox">
+                  <p class="name dark">Manoja Yadav, Farmer, Madhya Pradeshn</p>
+                  <p class="designation dark">Verified User</p>
+                </div>
+              </div>
+              <div class="review dark">
+                <h4>An overall wonderful and rewarding experience</h4>
+                <p>
+                  “ "For years, I struggled with inconsistent yields, but
+                  GrowBeyond's crop education helped me understand the needs of
+                  my crops better. ”
+                </p>
+              </div>
+            </div>
+            <!-- div5 -->
+            <div class="div5 eachdiv">
+              <div class="userdetails">
+                <div class="imgbox">
+                  <img
+                    src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="detbox">
+                  <p class="name">Harinder Singh, Farmer, Punjab</p>
+                  <p class="designation">Verified User</p>
+                </div>
+              </div>
+              <div class="review">
+                <h4>
+                  Awesome teaching support from TAs who did the bootcamp
+                  themselves. Getting guidance from them and learning from their
+                  experiences was easy.
+                </h4>
+                <p>
+                  “Being able to access farming knowledge in Hindi made all the
+                  difference for me. GrowBeyond's user-friendly platform is a
+                  game changer for farmers like me who want to stay informed and
+                  updated. ”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">Priyanshu Kumar</span>
+          </div>
+      
+          <div class="socialhadle">
+            <a href="https://github.com/priyanshu-k1"  target="_blank"><i class="fa fa-github  fa-2x" aria-hidden="true" ></i></a>
+            <a href="https://www.instagram.com/why.not.priyanshuuuu/?hl=en"  target="_blank"><i class="fa fa-instagram  fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/priyanshu-kumar-97898424a/"  target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+            <a href="https://leetcode.com/u/priyanshu-k1/"  target="_blank"><i class="fa fa-code fa-2x" aria-hidden="true"></i></a>
+          </div>
+        </footer>
+      </div>
+    
 
 
     
