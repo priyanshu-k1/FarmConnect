@@ -733,40 +733,7 @@ class Cowpeas {
   }
 }
 
-// class Lentils {
-//   pic = "/assets/crops/lentils.png";
 
-//   constructor(lang) {
-//     if (lang === "hi") {
-//       this.BestSeasonToGrow = "रबी मौसम: अक्टूबर-नवम्बर";
-//       this.Duration = "60-90 दिन";
-//       this.Soil = "दोमट मिट्टी";
-//       this.WaterRequirement = "कम जल आवश्यकता";
-//       this.Irrigation = "बारिश के दौरान सिंचाई की आवश्यकता नहीं होती है।";
-//       this.Temperature = "20-30°C";
-//       this.Fertilizers = "नाइट्रोजन, फास्फोरस का संतुलित उपयोग";
-//       this.Pests = "कीट: तना बोरर, सफेद मच्छर";
-//     } else if (lang === "te") {
-//       this.BestSeasonToGrow = "రబీ సీజన్: అక్టోబర్-నవంబర్";
-//       this.Duration = "60-90 రోజులు";
-//       this.Soil = "లోమ్స్ మట్టి";
-//       this.WaterRequirement = "తక్కువ నీటి అవసరం";
-//       this.Irrigation = "వర్షం సమయంలో నీరు త్రాగుట అవసరం లేదు.";
-//       this.Temperature = "20-30°C";
-//       this.Fertilizers = "నైట్రోజన్, ఫాస్ఫరస్ సమతుల్య ఉపయోగం";
-//       this.Pests = "కీటకాలు: తను బోరర్, తెల్ల జూన్";
-//     } else {
-//       this.BestSeasonToGrow = "Rabi Season: October-November";
-//       this.Duration = "60-90 days";
-//       this.Soil = "Loamy soil";
-//       this.WaterRequirement = "Low water requirement";
-//       this.Irrigation = "No irrigation required during rainfall.";
-//       this.Temperature = "20-30°C";
-//       this.Fertilizers = "Balanced application of nitrogen and phosphorus";
-//       this.Pests = "Pests: Stem borers, whiteflies";
-//     }
-//   }
-// }
 class Peas {
   pic = "/assets/crops/peas.png";
 
@@ -1775,7 +1742,7 @@ class Orange {
 }
 
 class Lemon {
-  pic = "/assets/crops/lemon.png";
+  pic = "/assets/crops/ .png";
 
   constructor(lang) {
     if (lang === "hi") {
@@ -3066,6 +3033,7 @@ module.exports = {
   Groundnuts,
   Millets,
   Coffee,
+
   Barley,
   Sorghum,
   Oats,
@@ -3085,6 +3053,8 @@ module.exports = {
   SnapBeans,
   AdzukiBeans,
   CranberryBeans,
+
+
   Coconut,
   Palm,
   Castor,
@@ -3093,6 +3063,7 @@ module.exports = {
   Mustard,
   Rapeseed,
   Sunflower,
+
   Sesame,
   Flax,
   Tea,
