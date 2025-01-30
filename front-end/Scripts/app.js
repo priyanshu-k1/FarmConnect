@@ -56,4 +56,113 @@ async function searchCrops() {
     cropImageElement.src = cropData.pic;
     textarea.style.visibility = "visible";
   }
+// code to send captured data in login page
+document.addEventListener('DOMContentLoaded', function() {
+  // Add event listener for the sign-in button (if any)
+  const signinButton = document.getElementById('signin-btn');
+  if (signinButton) {
+    signinButton.addEventListener('click', function() {
+      // Your click handler code for the sign-in button here
+      console.log('Sign-in button clicked');
+    });
+  }
+
+  // Add event listener for the form submission
+  const signupForm = document.getElementById('signupForm');
+  if (signupForm) {
+    signupForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('usernameholder').value.trim();
+      const email = document.getElementById('emailholder').value.trim();
+      const password = document.getElementById('passwordholder').value.trim();
+
+      console.log('Username:', username);
+      console.log('Email:', email);
+      console.log('Password:', password);
+
+      try {
+        // Send a POST request to the backend API for signup
+        const response = await fetch('http://localhost:3000/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, password }),
+        });
+        console.log(JSON.stringify({ username, email, password }));
+        console.log(response.ok);
+        if (response.ok) {
+          alert('Sign-up successful!');
+          localStorage.setItem("username",username);
+          window.location.href = '../index.html'; // Redirect to login page
+        } else {
+          const errorData = await response.json();
+          alert(errorData.error || 'Sign-up failed!');
+        }
+      } catch (error) {
+        console.error('Error during sign-up:', error);
+        alert('An unexpected error occurred.');
+      }
+    });
+  }
+});
+
+
+// Log in logic
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Handle form submission
+  document.getElementById('loginForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    try {
+      const response = await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`Welcome, ${data.username}!`);
+        localStorage.setItem('username', data.username); // Save username locally
+        window.location.href = 'index.html'; // Redirect after login
+      } else {
+        const errorData = await response.json();
+        alert(errorData.error || 'Login failed!');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('An unexpected error occurred.');
+    }
+  });
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navLink = document.getElementById("signinbutton");
   
+  // Check if navLink exists
+  if (navLink) {
+    const username = localStorage.getItem('username'); // Fetch username from localStorage
+
+    if (username) {
+      navLink.textContent = `Welcome, ${username}`;
+      navLink.href = 'sign_.html'; // Disable navigation if already signed in
+    } else {
+      navLink.textContent = 'Sign in';
+      navLink.href = 'sign_.html';
+    }
+  }
+});
+
+function chat(){
+  window.open("https://t.me/Priyanshuk_01",'_blank'); 
+}
+

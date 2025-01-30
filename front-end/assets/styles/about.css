@@ -73,9 +73,18 @@ body {
     width:100%;
     height:4rem;
   }
+  .wrapperDiv{
+    overflow: hidden;
+    width:100%;
+    height:100%;
+  }
   .profilePicture{
    border-radius: 9px;
-  }
+   transition: all 2.5s ease;
+}
+/* .profilePicture:hover{
+  transform:scale(1.3);
+} */
   .socialhadle{
     display: flex;
     align-items: center;
@@ -90,6 +99,9 @@ body {
 .fa:hover{
     transform: scale(1.1);
 }
+
+  
+
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;

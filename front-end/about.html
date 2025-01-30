@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/styles/main_screen.css">
     <link rel="stylesheet" href="./assets/styles/about.css">
     <script src="./Scripts/language.js"></script>
+    <script src="./Scripts/app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>GrowBeyond</title>
 </head>
@@ -51,7 +52,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link"  role="button">Sign in</a>
+                <a class="nav-link" id="signinbutton" href="sign_.html"  role="button">Sign in</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -138,7 +139,7 @@
       <div class="row d-flex flex-wrap flex-md-row flex-column justify-content-center" style="gap: 20px; margin: 20px 0;">
         <!-- Card 1 -->
         <div class="card" style="width: 18rem; border: 1px solid #08A346; border-radius: 10px; overflow: hidden;">
-          <img class="card-img-top profilePicture" src="Resources/lady-farmer.jpg" alt="Person One Card" style="margin-top: 10px;" >
+          <img class="card-img-top profilePicture" src="./assets/vector/devPic.jpeg" alt="Person One Card" style="margin-top: 10px;" >
           <div class="card-body">
             <h2 class="card-title text-center rounded" style="color: #08A346;">Priyanshu kumar</h2>
             <p class="card-text" data-lang="quote1">
@@ -148,7 +149,14 @@
               kpriyanshupdc@gmail.com
             </p>
             <p></p>
-            <a class="btn btn-success w-100" style="background-color: #08A346;" onclick="redirectToMail('srimylaboina17@gmail.com')" data-lang="contactB">Contact</a>
+            <a class="btn btn-success w-100" 
+            id="contactbutton"
+            style="background-color: #08A346;" 
+            data-lang="contactB"
+            role="button"
+            onclick="chat()">
+            Contact
+          </a>
           </div>
         </div>
         <div class="container">
