@@ -3082,7 +3082,6 @@ module.exports = {
   Muskmelon,
   Lychee,
   Peach,
-  // finished till plum go upwards
   Plum,
   Cherry,
   Jackfruit,
@@ -3115,11 +3114,4 @@ module.exports = {
   SweetPotato,
   Ginger,
   Garlic,
-
-
-
-
-
-
-
 };

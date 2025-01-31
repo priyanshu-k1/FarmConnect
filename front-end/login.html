@@ -7,27 +7,26 @@
     <link rel="shortcut icon" href="./assets/vector/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/styles/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./Scripts/app.js"></script>
     <title>GrowBeyond/login</title>
 </head>
 <body>
     <div class="container">
         <div class="box">
-            <form  method="get" id="loginForm">
+            <form id="loginForm">
                 <div class="inputholder">
                     <h3 align="center">Welcome Back!</h3>
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Enter your username">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter your password">
-                    <button id="signinbutton">Log in</button>
-                    <p align="center">First time here? <a href="./sign_.html">Sign in</a></p>
-
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    <button type="submit" id="signinbutton">Log in</button>
+                    <p align="center">First time here? <a href="./sign_.html">Sign up</a></p>
                 </div>
-
             </form>
         </div>
     </div>  
      
-<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
 </body>
 </html>

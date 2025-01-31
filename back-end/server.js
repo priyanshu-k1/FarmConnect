@@ -7,6 +7,7 @@ const router = express.Router();
 require('dotenv').config();
 const db = require('./db');
 const crops = require('./crops');
+
 // Initialize express app
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 // Environment variables
 const SECRET_KEY = process.env.SECRET_KEY;
+const JWT_SECRET = process.env.JWT_SECRET || '1903@kp';
 
 // Serve static files
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
@@ -56,6 +58,16 @@ router.post('/api/getCropDetails', (req, res) => {
   }
 });
 
+// Render dynamically products
+app.use('/assets', express.static(path.join(__dirname, '../front-end/assets')));
+app.get('/api/products', (req, res) => {
+  const query = 'SELECT * FROM products';
+  db.query(query, (err, results) => {
+    if (err) return res.status(500).json({ error: 'Database error' });
+    res.json(results);
+  });
+});
+
 // Authentication Routes
 router.post('/api/signup', async (req, res) => {
   const { username, email, password } = req.body;
@@ -87,24 +99,123 @@ router.post('/api/signup', async (req, res) => {
   }
 });
 
-router.post('/api/login', (req, res) => {
+// Code to log in the user
+router.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
 
-  const query = `SELECT * FROM users WHERE email = ?`;
-  db.query(query, [email], async (err, results) => {
-    if (err) return res.status(500).json({ error: 'Database error' });
-    
-    if (results.length === 0) return res.status(401).json({ error: 'Invalid credentials' });
+  try {
+    const query = `SELECT * FROM users WHERE email = ?`;
+    db.query(query, [email], async (err, results) => {
+      if (err) return res.status(500).json({ error: 'Database error' });
+      
+      if (results.length === 0) return res.status(401).json({ error: 'Invalid credentials' });
 
-    const user = results[0];
-    const match = await bcrypt.compare(password, user.password);
+      const user = results[0];
+      const match = await bcrypt.compare(password, user.password);
 
-    if (match) {
-      const token = jwt.sign({ userId: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
-      res.json({ token, username: user.username });
-    } else {
-      res.status(401).json({ error: 'Invalid credentials' });
+      if (match) {
+        const token = jwt.sign(
+          { userId: user.id, username: user.username }, 
+          JWT_SECRET, 
+          { expiresIn: '1h' }
+        );
+        res.json({ 
+          token, 
+          username: user.username,
+          message: 'Login successful' 
+        });
+      } else {
+        res.status(401).json({ error: 'Invalid credentials' });
+      }
+    });
+  } catch (error) {
+    console.error('Login error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Middleware to verify JWT token
+const verifyToken = (req, res, next) => {
+  const bearerHeader = req.headers['authorization'];
+  
+  if (!bearerHeader) {
+    return res.status(401).json({ error: 'No token provided' });
+  }
+
+  const token = bearerHeader.split(' ')[1];
+  
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    res.status(401).json({ error: 'Invalid token' });
+  }
+};
+
+// Add item to cart
+app.post('/api/cart/add', verifyToken, (req, res) => {
+  const { product_name, price, image_url, quantity } = req.body;
+  const userId = req.user.userId;
+
+  const query = `INSERT INTO cart (user_id, product_name, price, image_url, quantity) VALUES (?, ?, ?, ?, ?)`;
+
+  db.query(query, [userId, product_name, price, image_url, quantity], (err) => {
+    if (err) {
+      console.error('Error adding to cart:', err);
+      return res.status(500).json({ error: 'Failed to add item to cart' });
     }
+    res.status(201).json({ message: 'Item added to cart' });
+  });
+});
+
+
+
+// Get cart items
+app.get('/api/cart/items', verifyToken, (req, res) => {
+  const userId = req.user.userId;
+
+  const query = `SELECT * FROM cart WHERE user_id = ? ORDER BY cart_id DESC`;
+
+  db.query(query, [userId], (err, results) => {
+    if (err) {
+      console.error('Error fetching cart items:', err);
+      return res.status(500).json({ error: 'Failed to fetch cart items' });
+    }
+    res.json(results);
+  });
+});
+
+// Update cart item quantity
+app.put('/api/cart/update/:cartId', verifyToken, (req, res) => {
+  const { cartId } = req.params;
+  const { quantity } = req.body;
+  const userId = req.user.userId;
+
+  const query = `UPDATE cart SET quantity = ? WHERE cart_id = ? AND user_id = ?`;
+
+  db.query(query, [quantity, cartId, userId], (err) => {
+    if (err) {
+      console.error('Error updating quantity:', err);
+      return res.status(500).json({ error: 'Failed to update quantity' });
+    }
+    res.json({ message: 'Quantity updated' });
+  });
+});
+
+// Remove item from cart
+app.delete('/api/cart/remove/:cartId', verifyToken, (req, res) => {
+  const { cartId } = req.params;
+  const userId = req.user.userId;
+
+  const query = `DELETE FROM cart WHERE cart_id = ? AND user_id = ?`;
+
+  db.query(query, [cartId, userId], (err) => {
+    if (err) {
+      console.error('Error removing item:', err);
+      return res.status(500).json({ error: 'Failed to remove item' });
+    }
+    res.json({ message: 'Item removed from cart' });
   });
 });
 
