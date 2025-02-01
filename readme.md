@@ -1,7 +1,7 @@
 
-# GrowBeyond
+# FarmConnect
 
-GrowBeyond is a web platform designed to educate farmers about crops and provide them with the necessary tools and products for better crop management. The website offers information on various crops, including details on growing seasons, soil types, water requirements, and fertilizers. Farmers can also purchase essential farming products through the platform.
+FarmConnect is a web platform designed to educate farmers about crops and provide them with the necessary tools and products for better crop management. The website offers information on various crops, including details on growing seasons, soil types, water requirements, and fertilizers. Farmers can also purchase essential farming products through the platform.
 
 ## Features
 
@@ -73,7 +73,7 @@ GrowBeyond is a web platform designed to educate farmers about crops and provide
 
 ## Contributing
 
-We welcome contributions to the GrowBeyond project! If you'd like to contribute, please follow these steps:
+We welcome contributions to the FarmConnect project! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-name`).

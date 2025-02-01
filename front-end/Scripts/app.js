@@ -2,12 +2,30 @@
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function updateCartCount() {
-  const cartCount = document.getElementById('cart-count');
-  if (cartCount) {
-    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+async function updateCartCount() {
+  const cartCountElement = document.getElementById('cart-count');
+  const token = localStorage.getItem('token');
+
+  if (!cartCountElement || !token) return;
+
+  try {
+    const response = await fetch('http://localhost:3000/api/cart/count', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch cart count');
+    }
+
+    const { count } = await response.json();
+    cartCountElement.textContent = count;
+  } catch (error) {
+    console.error('Error fetching cart count:', error);
   }
 }
+
 
 async function addToCart(product) {
   // First check if user is logged in
@@ -52,19 +70,6 @@ async function addToCart(product) {
       });
     }
 
-
-//     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-//   <div class="toast-header">
-//     <img src="..." class="rounded me-2" alt="...">
-//     <strong class="me-auto">Bootstrap</strong>
-//     <small>11 mins ago</small>
-//     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-//   </div>
-//   <div class="toast-body">
-//     Hello, world! This is a toast message.
-//   </div>
-// </div>
-    // 
     localStorage.setItem('cart', JSON.stringify(cart));
     
     showToast(' added to cart successfully!');
@@ -215,8 +220,7 @@ function displayProducts(products) {
                     })">
                 add_shopping_cart
               </span>
-              <button class="btn btn-primary cartbutton" onclick="onPressedBuyNow('${product.name}')"
-              data-lang="buyb">Buy Now</button>
+              <button class="btn btn-primary cartbutton" onclick="showCart()" data-lang='buyb'>Buy Now</button>
             </div>
           </div>
         </div>
@@ -400,7 +404,12 @@ function chat() {
 function showCart(){
   window.location.href = 'checkout.html';
 }
-
+function onPressedBuyNow(product, price,image) {
+  localStorage.setItem('singleproduct', product);
+  localStorage.setItem('singleprice', price);
+  localStorage.setItem('singleimage', image);
+  window.location.href = 'buynow.html';
+}
 function showToast(message, type = 'success') {
   const toast = document.createElement('div');
   toast.className = `toast align-items-center show position-fixed top-0 end-0 m-3`;
@@ -431,8 +440,6 @@ function orderConfirmed(){
       alert('Please fill all the fields');
     }
     else{
-      localStorage.setItem("address",address.value.trim());
-      localStorage.setItem("pincode",pincode.value.trim());
       alert('Order Confirmed');
       window.location.href = 'finalPage.html';
     }

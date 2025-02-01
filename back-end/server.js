@@ -202,6 +202,20 @@ app.put('/api/cart/update/:cartId', verifyToken, (req, res) => {
     res.json({ message: 'Quantity updated' });
   });
 });
+app.get('/api/cart/count', verifyToken, (req, res) => {
+  const userId = req.user.userId;
+
+  const query = `SELECT SUM(quantity) AS count FROM cart WHERE user_id = ?`;
+  db.query(query, [userId], (err, results) => {
+    if (err) {
+      console.error('Error fetching cart count:', err);
+      return res.status(500).json({ error: 'Failed to fetch cart count' });
+    }
+
+    const count = results[0].count || 0; // Default to 0 if no items
+    res.json({ count });
+  });
+});
 
 // Remove item from cart
 app.delete('/api/cart/remove/:cartId', verifyToken, (req, res) => {
