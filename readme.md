@@ -24,7 +24,7 @@ FarmConnect is a web platform designed to educate farmers about crops and provid
   - Node.js
   - Express.js
 - **Database**: (Planned Integration)
-  - MongoDB / MySQL (for storing product and crop data)
+  -  MySQL (for storing product and crop data)
 - **Version Control**:
   - Git
   - GitHub for code repository
