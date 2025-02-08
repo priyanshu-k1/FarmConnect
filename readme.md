@@ -46,13 +46,16 @@ FarmConnect is a web platform designed to educate farmers about crops and provid
 2. Install dependencies for the frontend:
    ```bash
    cd front-end
-   npm install
+   npm install bootstrap
    ```
 
 3. Install dependencies for the backend (if applicable):
    ```bash
    cd back-end
-   npm install
+   npm install express
+   npm install bcrypt
+   npm install jwt 
+   npm install mysql  
    ```
 
 4. Start the server:
