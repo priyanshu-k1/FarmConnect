@@ -39,7 +39,7 @@ FarmConnect is a web platform designed to educate farmers about crops and provid
 
 1. Clone the repository:
    ```bash
-   git clone git@github.com:priyanshu-k1/GrowBeyond.git
+   git clone git@github.com:priyanshu-k1/FarmConnect.git
    cd GrowBeyond
    ```
 
