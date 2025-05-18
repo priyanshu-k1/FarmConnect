@@ -90,3 +90,5 @@ We welcome contributions to the FarmConnect project! If you'd like to contribute
 - Thanks to all contributors!
 
 ---
+##
+*Developed with ❤️ by Priyanshu Kumar*
