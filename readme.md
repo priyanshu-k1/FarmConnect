@@ -89,6 +89,5 @@ We welcome contributions to the FarmConnect project! If you'd like to contribute
 - Thanks to [Bootstrap](https://getbootstrap.com/) for the responsive front-end framework.
 - Thanks to all contributors!
 
----
 ##
 *Developed with ❤️ by Priyanshu Kumar*
